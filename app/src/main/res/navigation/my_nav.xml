@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="com.aplicada2.tareai.fragments.Prestamo.list.ListFragment"
-        android:label="Lista de personas"
+        android:label="@string/bamelista"
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_listFragment_to_addFragment"
@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="com.aplicada2.tareai.fragments.Prestamo.add.AddFragment"
-        android:label="Registro de personas"
+        android:label="@string/nameRegistroPrestamo"
         tools:layout="@layout/fragment_add" >
         <action
             android:id="@+id/action_addFragment_to_listFragment"
@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/updateFragment"
         android:name="com.aplicada2.tareai.fragments.Prestamo.update.UpdateFragment"
-        android:label="Actualizar"
+        android:label="@string/btn_update"
         tools:layout="@layout/fragment_update" >
         <action
             android:id="@+id/action_updateFragment_to_addFragment"

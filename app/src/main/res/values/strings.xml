@@ -20,5 +20,7 @@
     <string name="txt_concepto">Concepto</string>
     <string name="txt_monto">Monto</string>
     <string name="ErrorNumerosNegativos">Valor invalido para el monto.</string>
+    <string name="bamelista">Lista de prestamos</string>
+    <string name="nameRegistroPrestamo">Registro de prestamo</string>
 
 </resources>
