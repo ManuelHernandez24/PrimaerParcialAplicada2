@@ -9,56 +9,46 @@
     >
 
     <EditText
-        android:id="@+id/updateNombres_et"
+        android:id="@+id/updateDeudor_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint=""
+        android:hint="@string/txt_deudor"
         android:inputType="textPersonName"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="100dp" />
 
     <EditText
-        android:id="@+id/updateEmail_et"
+        android:id="@+id/updateConcepto_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint=""
-        android:inputType="textWebEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/updateNombres_et"
-        tools:layout_editor_absoluteX="99dp" />
+        android:hint="@string/txt_concepto"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toTopOf="@id/updateDeudor_et"
+        tools:layout_editor_absoluteX="100dp" />
 
     <EditText
-        android:id="@+id/updateOcupacion_et"
+        android:id="@+id/updateMonto_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint=""
+        android:hint="@string/txt_monto"
         android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/updateEmail_et"
-        tools:layout_editor_absoluteX="99dp" />
-
-    <EditText
-        android:id="@+id/updateBalance_et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint=""
-        android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/updateOcupacion_et"
-        tools:layout_editor_absoluteX="99dp" />
+        app:layout_constraintTop_toTopOf="@id/updateConcepto_et"
+        tools:layout_editor_absoluteX="100dp" />
 
     <Button
         android:id="@+id/update_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
-        android:text="@string/btn_update"
+        android:text="@string/btn_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateOcupacion_et" />
+        app:layout_constraintTop_toBottomOf="@id/updateMonto_et" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
