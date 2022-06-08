@@ -19,5 +19,6 @@
     <string name="txt_deudor">Deudor</string>
     <string name="txt_concepto">Concepto</string>
     <string name="txt_monto">Monto</string>
+    <string name="ErrorNumerosNegativos">Valor invalido para el monto.</string>
 
 </resources>

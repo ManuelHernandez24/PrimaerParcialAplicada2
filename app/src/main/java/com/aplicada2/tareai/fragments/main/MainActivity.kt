@@ -2,7 +2,6 @@ package com.aplicada2.tareai.fragments.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -10,13 +9,9 @@ import com.aplicada2.tareai.R
 
 class MainActivity : AppCompatActivity() {
 
-    private var spinnerOcupacion: Spinner?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-        spinnerOcupacion = findViewById(R.id.addOcupacion_et)
 
         setupActionBarWithNavController(findNavController(R.id.fragment))
     }
