@@ -15,10 +15,10 @@ interface PrestamoDao {
     @Delete
     suspend fun deletePrestamo(prestamo: Prestamo)
 
-    @Query("DELETE FROM tabla_prestamo")
+    @Query("DELETE FROM prestamos")
     suspend fun deleteAllPrestamo()
 
-    @Query("SELECT * FROM TABLA_PRESTAMO ORDER BY PrestamoId ASC")
+    @Query("SELECT * FROM prestamos ORDER BY PrestamoId ASC")
     fun readAllData(): LiveData<List<Prestamo>>
 
 }

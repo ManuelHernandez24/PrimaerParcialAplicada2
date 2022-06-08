@@ -22,7 +22,7 @@ abstract class PrestamoDatabase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     PrestamoDatabase::class.java,
-                    "tabla_Prestamo"
+                    "prestamos"
                 ).build()
                 INSTANCE = instance
                 return instance
