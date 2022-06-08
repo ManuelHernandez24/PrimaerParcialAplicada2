@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.aplicada2.tareai.R
-import com.aplicada2.tareai.data.database.entities.Cosa
+import com.aplicada2.tareai.data.database.entities.Prestamo
 import com.aplicada2.tareai.iu.viewmodel.CosaViewModel
 import kotlinx.android.synthetic.main.fragment_update.*
 import kotlinx.android.synthetic.main.fragment_update.view.*
@@ -60,7 +60,7 @@ class UpdateFragment : Fragment() {
             val ocupacionId = updateOcupacion_et.text.toString()
             val balance = (updateBalance_et.text.toString()).toDouble()
             //Se crea la persona
-            val updatePersona = Cosa(args.currentPersona.PersonaId, nombres, email, Integer.parseInt(ocupacionId), (balance.toString()).toDouble())
+            val updatePersona = Prestamo(args.currentPersona.PersonaId, nombres, email, Integer.parseInt(ocupacionId), (balance.toString()).toDouble())
             //Update current persona
             mPersonaViewModel.updatePersona(updatePersona)
             Toast.makeText(requireContext(), getString(R.string.ActualizarSinErrores), Toast.LENGTH_SHORT).show()
