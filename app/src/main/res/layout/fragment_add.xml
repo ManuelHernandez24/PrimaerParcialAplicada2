@@ -10,14 +10,36 @@
     <!-- TODO: Update blank fragment layout -->
 
     <EditText
-        android:id="@+id/addNombres_et"
+        android:id="@+id/addDeudor_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint="@string/txt_nombres"
+        android:hint="@string/txt_deudor"
         android:inputType="textPersonName"
         app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="100dp" />
+
+    <EditText
+        android:id="@+id/addConcepto_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="@string/txt_concepto"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toTopOf="@id/addDeudor_et"
+        tools:layout_editor_absoluteX="100dp" />
+
+    <EditText
+        android:id="@+id/addMonto_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="@string/txt_monto"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toTopOf="@id/addConcepto_et"
         tools:layout_editor_absoluteX="100dp" />
 
     <Button
@@ -28,6 +50,6 @@
         android:text="@string/btn_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addNombres_et" />
+        app:layout_constraintTop_toBottomOf="@id/addMonto_et" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

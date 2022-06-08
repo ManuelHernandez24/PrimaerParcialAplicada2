@@ -42,7 +42,7 @@
             android:id="@+id/action_updateFragment_to_listFragment"
             app:destination="@id/listFragment" />
         <argument
-            android:name="currentPersona"
-            app:argType="com.aplicada2.tareai.data.database.entities.Persona" />
+            android:name="currentPrestamo"
+            app:argType="com.aplicada2.tareai.data.database.entities.Prestamo" />
     </fragment>
 </navigation>

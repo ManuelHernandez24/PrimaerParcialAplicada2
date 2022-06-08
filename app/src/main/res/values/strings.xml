@@ -2,7 +2,6 @@
     <string name="app_name">Examen</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="txt_nombres">Nombres</string>
     <string name="btn_add">Añadir</string>
     <string name="btn_update">Actualizar</string>
     <string name="AgregarSinErrores">Se agregó perfectamente.</string>
@@ -17,5 +16,8 @@
     <string name="EliminadoConExito">ha sido eliminado correctamente.</string>
     <string name="TituloMensajeEliminar">Estás a punto de elimar a </string>
     <string name="MensajeConfirmacionEliminar">Estás seguro de que quieres eliminar a </string>
+    <string name="txt_deudor">Deudor</string>
+    <string name="txt_concepto">Concepto</string>
+    <string name="txt_monto">Monto</string>
 
 </resources>

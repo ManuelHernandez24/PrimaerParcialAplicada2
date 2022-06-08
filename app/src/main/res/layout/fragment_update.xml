@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint="@string/txt_nombres"
+        android:hint=""
         android:inputType="textPersonName"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="100dp" />
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/txt_email"
+        android:hint=""
         android:inputType="textWebEmailAddress"
         app:layout_constraintTop_toBottomOf="@+id/updateNombres_et"
         tools:layout_editor_absoluteX="99dp" />
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/txt_ocupacion"
+        android:hint=""
         android:inputType="numberDecimal"
         app:layout_constraintTop_toBottomOf="@+id/updateEmail_et"
         tools:layout_editor_absoluteX="99dp" />
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/txt_balance"
+        android:hint=""
         android:inputType="numberDecimal"
         app:layout_constraintTop_toBottomOf="@+id/updateOcupacion_et"
         tools:layout_editor_absoluteX="99dp" />
