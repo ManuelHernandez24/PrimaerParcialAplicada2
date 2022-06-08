@@ -98,9 +98,9 @@ class UpdateFragment : Fragment() {
         builder.setNegativeButton(R.string.No){_,_ ->
 
         }
-        val title : String = ("Eliminar a ${args.currentPrestamo.Deudor}")
+        val title : String = ("Eliminar a ${args.currentPrestamo.Deudor}") // Cuando ponía el texto en los recursos el proyecto me daba error.
         builder.setTitle("${title}")
-        builder.setMessage("Estás seguro?")
+        builder.setMessage("Estás seguro?") // Cuando ponía el texto en los recursos el proyecto me daba error.
         builder.create().show()
     }
 }
