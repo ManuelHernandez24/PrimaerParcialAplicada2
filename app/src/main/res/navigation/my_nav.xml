@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.aplicada2.tareai.fragments.Cosa.list.ListFragment"
+        android:name="com.aplicada2.tareai.fragments.Prestamo.list.ListFragment"
         android:label="Lista de personas"
         tools:layout="@layout/fragment_list" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.aplicada2.tareai.fragments.Cosa.add.AddFragment"
+        android:name="com.aplicada2.tareai.fragments.Prestamo.add.AddFragment"
         android:label="Registro de personas"
         tools:layout="@layout/fragment_add" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
-        android:name="com.aplicada2.tareai.fragments.Cosa.update.UpdateFragment"
+        android:name="com.aplicada2.tareai.fragments.Prestamo.update.UpdateFragment"
         android:label="Actualizar"
         tools:layout="@layout/fragment_update" >
         <action

@@ -1,4 +1,4 @@
-package com.aplicada2.tareai.fragments.Cosa.list
+package com.aplicada2.tareai.fragments.Prestamo.list
 
 import android.os.Bundle
 import android.view.*

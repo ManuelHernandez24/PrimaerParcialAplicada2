@@ -1,4 +1,4 @@
-package com.aplicada2.tareai.fragments.Cosa.add
+package com.aplicada2.tareai.fragments.Prestamo.add
 
 import androidx.fragment.app.Fragment
 

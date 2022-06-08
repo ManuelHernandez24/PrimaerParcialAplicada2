@@ -1,4 +1,4 @@
-package com.aplicada2.tareai.fragments.Cosa.update
+package com.aplicada2.tareai.fragments.Prestamo.update
 
 import android.app.AlertDialog
 import android.os.Bundle

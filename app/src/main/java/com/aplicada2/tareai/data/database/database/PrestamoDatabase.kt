@@ -1,12 +1,17 @@
 package com.aplicada2.tareai.data.database.database
 
 import android.content.Context
+import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.aplicada2.tareai.data.database.dao.PrestamoDao
+import com.aplicada2.tareai.data.database.entities.Prestamo
 
 
+@Database(entities = [Prestamo::class], version = 1, exportSchema = false)
 abstract class PrestamoDatabase: RoomDatabase() {
 
+    abstract fun prestamoDao(): PrestamoDao
 
     companion object{
         @Volatile

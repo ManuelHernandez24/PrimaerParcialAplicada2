@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.aplicada2.tareai.data.database.Repository.PersonaRepository
+import com.aplicada2.tareai.data.database.Repository.PrestamoRepository
 import com.aplicada2.tareai.data.database.database.PrestamoDatabase
 import com.aplicada2.tareai.data.database.entities.Prestamo
 import kotlinx.coroutines.Dispatchers
@@ -12,11 +12,13 @@ import kotlinx.coroutines.launch
 
 class PrestamoViewModel(application : Application): AndroidViewModel(application) {
     val readAllData: LiveData<List<Prestamo>>
-    private val repository: PersonaRepository
+    private val repository: PrestamoRepository
+
+
 
     init{
-        val prestamoDao = CosaDatabase.getDatabase(application).prestamoDao()
-        repository = PersonaRepository(prestamoDao)
+        val prestamoDao = PrestamoDatabase.getDatabase(application).prestamoDao()
+        repository = PrestamoRepository(prestamoDao)
         readAllData = repository.readAllData
     }
 
