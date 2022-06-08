@@ -5,14 +5,14 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-abstract class CosaDatabase: RoomDatabase() {
+abstract class PrestamoDatabase: RoomDatabase() {
 
 
     companion object{
         @Volatile
-        private var INSTANCE: CosaDatabase? = null
+        private var INSTANCE: PrestamoDatabase? = null
 
-        fun getDatabase(context: Context): CosaDatabase {
+        fun getDatabase(context: Context): PrestamoDatabase {
             val tempInstance = INSTANCE
 
             if(tempInstance != null){
@@ -21,8 +21,8 @@ abstract class CosaDatabase: RoomDatabase() {
             synchronized(this){
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    CosaDatabase::class.java,
-                    "tabla_Cosa"
+                    PrestamoDatabase::class.java,
+                    "tabla_Prestamo"
                 ).build()
                 INSTANCE = instance
                 return instance
