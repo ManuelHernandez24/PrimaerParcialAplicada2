@@ -12,7 +12,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.aplicada2.tareai.R
 import com.aplicada2.tareai.data.database.entities.Prestamo
-import com.aplicada2.tareai.iu.viewmodel.CosaViewModel
+import com.aplicada2.tareai.iu.viewmodel.PrestamoViewModel
+import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_update.*
 import kotlinx.android.synthetic.main.fragment_update.view.*
 
@@ -20,22 +21,20 @@ import kotlinx.android.synthetic.main.fragment_update.view.*
 class UpdateFragment : Fragment() {
     private val args by navArgs<UpdateFragmentArgs>()
 
-    private lateinit var mPersonaViewModel: CosaViewModel
+    private lateinit var mPrestamoViewModel: PrestamoViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
 
         val view = inflater.inflate(R.layout.fragment_update, container, false)
 
-        mPersonaViewModel = ViewModelProvider(this).get(CosaViewModel::class.java)
+        mPrestamoViewModel = ViewModelProvider(this).get(PrestamoViewModel::class.java)
 
-        view.updateNombres_et.setText(args.currentPersona.Nombres)
-        view.updateEmail_et.setText(args.currentPersona.Email)
-        view.updateOcupacion_et.setText(args.currentPersona.OcupacionId.toString())
-        view.updateBalance_et.setText(args.currentPersona.Balance.toString())
+        view.updateDeudor_et.setText(args.currentPrestamo.Deudor)
+        view.updateConcepto_et.setText(args.currentPrestamo.Concepto)
+        view.updateMonto_et.setText(args.currentPrestamo.Monto.toString())
 
         view.update_btn.setOnClickListener{
             updateItem()
@@ -50,22 +49,25 @@ class UpdateFragment : Fragment() {
 
 
         if(
-            updateNombres_et.text.toString().length > 2 &&
-            updateBalance_et.text.toString().length > 0 &&
-            updateEmail_et.text.toString().length > 5 &&
-            updateOcupacion_et.text.toString().length > 0
+            updateDeudor_et.text.toString().length > 2 &&
+            updateConcepto_et.text.toString().length > 0 &&
+            updateMonto_et.text.toString().length > 0
         ){
-            val nombres = updateNombres_et.text.toString()
-            val email = updateEmail_et.text.toString()
-            val ocupacionId = updateOcupacion_et.text.toString()
-            val balance = (updateBalance_et.text.toString()).toDouble()
-            //Se crea la persona
-            val updatePersona = Prestamo(args.currentPersona.PersonaId, nombres, email, Integer.parseInt(ocupacionId), (balance.toString()).toDouble())
-            //Update current persona
-            mPersonaViewModel.updatePersona(updatePersona)
-            Toast.makeText(requireContext(), getString(R.string.ActualizarSinErrores), Toast.LENGTH_SHORT).show()
-            //Ir atras
-            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+            if((addMonto_et.text.toString()).toDouble() >= 0){
+                val deudor = addDeudor_et.text.toString()
+                val concepto = addConcepto_et.text.toString()
+                val monto = (addMonto_et.text.toString()).toDouble()
+
+                //Se crea la persona
+                val updatePrestamo = Prestamo(args.currentPrestamo.PrestamoId, deudor, concepto, (monto.toString()).toDouble())
+                //Update current persona
+                mPrestamoViewModel.updatePrestamo(updatePrestamo)
+                Toast.makeText(requireContext(), getString(R.string.ActualizarSinErrores), Toast.LENGTH_SHORT).show()
+                //Ir atras
+                findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+            }
+
+
         }else{
             Toast.makeText(requireContext(), getString(R.string.ActualizarConErrores), Toast.LENGTH_SHORT).show()
         }
@@ -81,22 +83,22 @@ class UpdateFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.menu_delete){
-            deletePersona()
+            deletePrestamo()
         }
         return super.onOptionsItemSelected(item)
     }
 
-    private fun deletePersona() {
+    private fun deletePrestamo() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton(R.string.Si){_,_ ->
-            mPersonaViewModel.deletePersona(args.currentPersona)
-            Toast.makeText(requireContext(), "${args.currentPersona.Nombres} ${R.string.EliminadoConExito}", Toast.LENGTH_SHORT).show()
+            mPrestamoViewModel.deletePrestamo(args.currentPrestamo)
+            Toast.makeText(requireContext(), "${args.currentPrestamo.Deudor} ${R.string.EliminadoConExito}", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }
         builder.setNegativeButton(R.string.No){_,_ ->
 
         }
-        val title : String = ("Eliminar a ${args.currentPersona.Nombres}")
+        val title : String = ("Eliminar a ${args.currentPrestamo.Deudor}")
         builder.setTitle("${title}")
         builder.setMessage("Estás seguro?")
         builder.create().show()
